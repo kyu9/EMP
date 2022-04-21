@@ -11,14 +11,14 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ControllerTest {
-    @Autowired
-    MockMvc mockMvc;
-
-    @Test
-    @DisplayName("대충 컨트롤러가 작동하는가?")
-    void viewControllerTest() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/test"))
-                .andExpect(MockMvcResultMatchers.status().is(200));
-    }
-}
+//class ControllerTest {
+//    @Autowired
+//    MockMvc mockMvc;
+//
+//    @Test
+//    @DisplayName("대충 컨트롤러가 작동하는가?")
+//    void viewControllerTest() throws Exception {
+//        mockMvc.perform(MockMvcRequestBuilders.get("/test"))
+//                .andExpect(MockMvcResultMatchers.status().is(200));
+//    }
+//}

@@ -1,0 +1,57 @@
+openapi: 3.0.3
+info:
+  title: Title
+  description: Title
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /CLibrary:
+    get:
+      summary: Get Single Common Library
+      operationId: getCLibrary
+      responses:
+        200:
+          description: 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCLibraryDto'
+        400:
+          description: 실패
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseDto'
+    post:
+      summary: Save, Update Single Common Library
+      operationId: postCLibrary
+      responses:
+        200:
+          description: 성공
+        400:
+          description: 실패
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseDto'
+
+
+
+components:
+  schemas:
+    GetCLibraryDto:
+      type: object
+      properties:
+        name:
+          type: string
+          example: actuator
+    ErrorResponseDto:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          example: "00_0000_00"
+        errorMessage:
+          type: string
+          example: "Error Invoke!"
