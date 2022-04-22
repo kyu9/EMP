@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.5.12'
+    id 'org.springframework.boot' version '2.1.8.RELEASE'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
@@ -10,6 +10,7 @@ sourceCompatibility = '1.8'
 
 repositories {
     mavenCentral()
+//    maven{url 'http://nexus.konadev.com/content/repositories/public'}
 }
 
 dependencies {
@@ -21,6 +22,6 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-tasks.named('test') {
+test {
     useJUnitPlatform()
 }

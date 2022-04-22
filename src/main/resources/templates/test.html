@@ -5,22 +5,145 @@
     <link th:href="@{/bootstrap/css/bootstrap.css}" type="text/css" rel="stylesheet"/>
 </head>
 <body style="overflow-x: hidden">
-<div class="container" style="text-align:center; max-width: max-content; max-height: max-content; margin: 0; padding: 0;">
-    <div class="card-header" style="text-align: center">
-        <div class="badge-warning" style="text-align: center; font-weight: bold; font-size: 40px;"> Kona Initializr </div>
-    </div>
+<div id="app">
+    <!-- 여기서는 세로로 1:9? 정도로 나누고-->
+    <div id="main" style="width: 100%">
+        <header id="header">
+            <h1 class="logo">
+                <a href="/">
+                    <span class="logo-content" tabindex="-1">
+                        대충 이미지
+                    </span>
+                </a>
+            </h1>
+        </header>
 
-    <div class="container-fluid" style="height: 100%;">
-        <div class="card-body">
-            <div class="table-responsive" style="overflow-y: scroll">
+        <hr class="divider">
+        <!--여기까진 예상한 그대로-->
 
+        <form class="form" autocomplete="off">
+            <div class="colset colset-main" style="width: 90%; margin-bottom: 20px;">
+                <div class="left" style="width: 50%; float: left;">
+                    <div class="col-sticky">
+                        <div class="colset">
+                            <div class="left" style="width: 50%; float: left">
+                                <div class="control">
+                                    <label class="label" for>Project</label>
+                                    <div class="control-element">
+                                        Gradle Project
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right" style="width: 50%; float: right">
+                                <div class="control">
+                                    <label class="label" for>Language</label>
+                                    <div class="control-element">
+                                        <div class="group-radio">
+                                            <a href="/" class="radio checked">
+                                                <span class="caret" tabindex="-1"></span>
+                                                <span class="radio-content" tabindex="-1">Java</span>
+                                            </a>
+                                            <a href="/" class="radio ">
+                                                <span class="caret" tabindex="-1"></span>
+                                                <span class="radio-content" tabindex="-1">Kotlin</span>
+                                            </a>
+                                            <a href="/" class="radio ">
+                                                <span class="caret" tabindex="-1"></span>
+                                                <span class="radio-content" tabindex="-1">Groovy</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <label class="label">Spring Boot</label>
+                            <div class="control-element">
+                                <div class="group-radio">
+                                    <a href="/" class="radio ">
+                                        <span class="caret" tabindex="-1"></span>
+                                        <span class="radio-content" tabindex="-1">2.1.8</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <label class="label">Project Metadata</label>
+                            <div class="control-element">
+                                <div class="control control-inline">
+                                    <label for="input-group">Group</label>
+                                    <input type="text" id="input-group" class="input" value="com.example">
+                                </div>
+                                <div class="control control-inline">
+                                    <label for="input-artifact">Artifact</label>
+                                    <input type="text" id="input-artifact" class="input" value="demo">
+                                </div>
+                                <div class="control control-inline">
+                                    <label for="input-name">Name</label>
+                                    <input type="text" id="input-name" class="input" value="demo">
+                                </div>
+                                <div class="control control-inline">
+                                    <label for="input-description">Description</label>
+                                    <input type="text" id="input-description" class="input" value="Demo project for Spring Boot">
+                                </div>
+                                <div class="control control-inline">
+                                    <label for="input-packageName">Package name</label>
+                                    <input type="text" id="input-packageName" class="input" value="com.example.demo">
+                                </div>
+                                <div class="control control-inline">
+                                    <label>Packaging</label>
+                                    <div class="group-radio">
+                                        <a href="/" class="radio checked">
+                                            <span class="caret" tabindex="-1"></span>
+                                            <span class="radio-content" tabindex="-1">Jar</span>
+                                        </a>
+                                        <a href="/" class="radio ">
+                                            <span class="caret" tabindex="-1"></span>
+                                            <span class="radio-content" tabindex="-1">War</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="control control-inline">
+                                    <label>Java</label>
+                                    <div class="group-radio">
+                                        <a href="/" class="radio checked">
+                                            <span class="caret" tabindex="-1"></span>
+                                            <span class="radio-content" tabindex="-1">8</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right" style="width: 50%; float: right;">
+                    <div class="control">
+                        <div class="dependency-header">
+                            <span class="label" style="float: left">Dependencies</span>
+                            <button class="button" type="button" id="explore-dependencies" style="float:right;">
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="no-dependency">No dependency selected</div>
+                </div>
             </div>
-        </div>
+
+            <div class="actions" style="width: 5%;">
+                <div class="actions-container" style="text-align: center; margin-top: 20px;">
+                    <button class="button primary" type="button" id="generate-project">
+                        <span class="button-content" tabindex="-1">
+                            <span>GENERATE</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 
-<!--<script th:src="@{/bootstrap/js/jquery-3.6.0.min.js}"></script>-->
-<!--<script th:src="@{/bootstrap/js/popper.js}"></script>-->
-<!--<script th:src="@{/bootstrap/js/bootstrap.js}"></script>-->
+<script th:src="@{/bootstrap/js/jquery-3.6.0.min.js}"></script>
+<script th:src="@{/bootstrap/js/popper.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
 </body>
 </html>
