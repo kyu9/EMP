@@ -1,0 +1,8 @@
+{
+  "library": "spring-mvc",
+  "modelPackage": "com.example.emp.swagger.dto",
+  "apiPackage": "com.example.emp.swagger.api",
+  "invokerPackage": "com.example.emp.swagger.invoker",
+  "hideGenerationTimestamp": true,
+  "delegatePattern": true
+}

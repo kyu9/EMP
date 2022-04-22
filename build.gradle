@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.1.8.RELEASE'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'org.hidetake.swagger.generator'
 }
 
 group = 'com.example'
@@ -19,11 +20,27 @@ dependencies {
         exclude module: 'spring-boot-starter-tomcat'
     }
     implementation('org.springframework.boot:spring-boot-starter-undertow')
-    implementation 'org.springdoc:springdoc-openapi-ui:1.5.10'
-    implementation 'io.swagger.core.v3:swagger-annotations:2.1.10'
+    implementation 'org.openapitools:openapi-generator-cli:5.3.0'
+    implementation 'io.swagger:swagger-annotations:1.5.22'
+    implementation 'gradle.plugin.org.hidetake:gradle-swagger-generator-plugin:2.18.1'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
+swaggerSources{
+    EMP {
+        inputFile = file("$rootDir/EMP/emp.yaml")
+        code {
+            language = 'spring'
+            configFile = file("$rootDir/EMP/EMP-spec.json")
+            wideOutputDir = false
+            outputDir = file('$rootDir/emp')
+            components = ['models', 'apis', 'apiTests']
+        }
+    }
+}
+
+generateSwaggerCodeEmp.group = "0.action"
 
 test {
     useJUnitPlatform()
