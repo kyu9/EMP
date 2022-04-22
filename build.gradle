@@ -19,6 +19,9 @@ dependencies {
         exclude module: 'spring-boot-starter-tomcat'
     }
     implementation('org.springframework.boot:spring-boot-starter-undertow')
+    implementation 'org.springdoc:springdoc-openapi-ui:1.5.10'
+    implementation 'io.swagger.core.v3:swagger-annotations:2.1.10'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
