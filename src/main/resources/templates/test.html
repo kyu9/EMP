@@ -4,15 +4,16 @@
     <title>Kona Initializr</title>
     <link th:href="@{/bootstrap/css/bootstrap.css}" type="text/css" rel="stylesheet"/>
 </head>
-<body style="overflow-x: hidden">
-<div id="app">
+<body style="overflow-x: hidden; ">
+<!--가장 밖-->
+<div id="app" style="height: 100%; width: 100%">
     <!-- 여기서는 세로로 1:9? 정도로 나누고-->
 <!--    <div id="main">-->
         <header id="header">
             <h1 class="logo">
                 <a href="/">
                     <span class="logo-content" tabindex="-1">
-                        대충 이미지 / 해위
+                        대충 이미지
                     </span>
                 </a>
             </h1>
@@ -21,8 +22,9 @@
         <hr class="divider">
         <!--여기까진 예상한 그대로-->
 
-        <form class="form" autocomplete="off">
-            <div class="colset colset-main" style="height: 90%; margin-bottom: 20px;">
+        <!--일단 이 Form이 1 : 8 : 1 정도 비율로 들어가야하는데 위에 몰려있다-->
+        <form class="form" autocomplete="off" style=" border: solid">
+            <div class="colset colset-main" style=" margin-bottom: 20px;">
                 <div class="left" style="width: 50%; float: left;">
                     <div class="col-sticky">
                         <div class="colset">
