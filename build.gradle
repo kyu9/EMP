@@ -30,7 +30,7 @@ dependencies {
 
 swaggerSources{
     EMP {
-        inputFile = file("$rootDir/src/main/com/example/emp/emp.yaml")
+        inputFile = file("$rootDir/emp.yaml")
         code {
             language = 'spring'
             configFile = file("$rootDir/src/main/EMP-spec.json")
