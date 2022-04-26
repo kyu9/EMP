@@ -4,11 +4,11 @@
     <title>Kona Initializr</title>
     <link th:href="@{/bootstrap/css/bootstrap.css}" type="text/css" rel="stylesheet"/>
 </head>
-<body style="overflow-x: hidden; ">
+<body style="overflow-x: hidden; margin: 0px;">
 <!--가장 밖-->
-<div id="app" style="display: grid; place-items: center; min-height: 100vh;">
+<div id="app" style="display: grid; place-items: center; width: 100%; height: 100%">
     <!-- 여기서는 세로로 1:9? 정도로 나누고-->
-    <div id="main" style="display: flex; flex-direction: column;">
+    <div id="main" style="display: flex; flex-direction: column; width: 80%;">
         <header id="header" style="flex-grow: 1;">
             <h1 class="logo">
                 <a href="/">
@@ -21,9 +21,10 @@
 
         <hr class="divider">
 
-        <form class="form" autocomplete="off" style="border: solid; flex-grow: 9; display: flex; flex-direction: column;">
-            <div class="colset colset-main" style="margin-bottom: 20px; flex-grow: 9; border-bottom: solid;">
-                <div class="left" style="width: 50%; float: left;">
+        <form class="form" autocomplete="off"
+              style="border: solid; flex-grow: 9; display: flex; flex-direction: column; height: 80%;">
+            <div class="colset colset-main" style="margin-bottom: 20px; flex-grow: 9; border-bottom: solid; height: 70vh;">
+                <div class="left" style="width: 50%; height: 100%; float: left; border-collapse: collapse">
                     <div class="col-sticky">
                         <div class="colset">
                             <div class="left" style="width: 50%; float: left">
@@ -116,7 +117,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="right" style="width: 50%; float: right; display: flex; flex-direction: column; ">
+                <!-- 마진 작업을 해주면 fancy한 선을 그을 수 있을 것 같은 예감이 든다 -->
+                <div class="right" style="width: 49%; height: 100%; float: right; display: flex; flex-direction: column; border-left: solid">
                     <div class="control" style="flex-grow: 1; margin: 10px;">
                         <div class="dependency-header">
                             <span class="label" style="float: left">Dependencies</span>
@@ -125,7 +127,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="dependencyList" style="flex-grow: 9; border-top: solid; margin: 5px; height: 100vh;">No dependency selected</div>
+                    <div class="dependencyList" style="flex-grow: 9; border-top: solid; margin: 5px; ">No dependency selected</div>
                 </div>
             </div>
 
