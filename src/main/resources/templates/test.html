@@ -23,10 +23,10 @@
 
         <form class="form" autocomplete="off"
               style="border: solid; flex-grow: 9; display: flex; flex-direction: column; height: 80%;">
-            <div class="colset colset-main" style="margin-bottom: 20px; flex-grow: 9; border-bottom: solid; height: 70vh;">
-                <div class="left" style="width: 50%; height: 100%; float: left; border-collapse: collapse">
-                    <div class="col-sticky">
-                        <div class="colset">
+            <div class="colset colset-main" style="flex-grow: 9; border-bottom: solid; height: 70vh;">
+                <div class="left" style="width: 50%; height: 100%; float: left;">
+                    <div class="col-sticky" style="width: 100%; height: 100%; display: flex; flex-direction: column">
+                        <div class="colset" style="border-bottom: solid; flex-grow: 2;">
                             <div class="left" style="width: 50%; float: left">
                                 <div class="control">
                                     <label class="label" for>Project</label>
@@ -57,7 +57,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="control">
+                        <div class="control" style="flex-grow: 2; ">
                             <label class="label">Spring Boot</label>
                             <div class="control-element">
                                 <div class="group-radio">
@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="control">
+                        <div class="control" style="flex-grow: 6;">
                             <label class="label">Project Metadata</label>
                             <div class="control-element">
                                 <div class="control control-inline">
@@ -119,15 +119,15 @@
                 </div>
                 <!-- 마진 작업을 해주면 fancy한 선을 그을 수 있을 것 같은 예감이 든다 -->
                 <div class="right" style="width: 49%; height: 100%; float: right; display: flex; flex-direction: column; border-left: solid">
-                    <div class="control" style="flex-grow: 1; margin: 10px;">
-                        <div class="dependency-header">
-                            <span class="label" style="float: left">Dependencies</span>
-                            <button class="button" type="button" id="explore-dependencies" style="float:right;">
+                    <div class="control" style="flex-grow: 0.3; margin: 10px; display: table">
+                        <div class="dependency-header" style="display: table-cell; vertical-align: middle">
+                            <span class="label" style="float: left; margin-top: 10px">Dependencies</span>
+                            <button class="button" type="button" id="explore-dependencies" style="float:right; margin-top: 10px;">
                                 <span>Add</span>
                             </button>
                         </div>
                     </div>
-                    <div class="dependencyList" style="flex-grow: 9; border-top: solid; margin: 5px; ">No dependency selected</div>
+                    <div class="dependencyList" style="flex-grow: 9.7; border-top: solid; margin: 15px; padding-top: 20px;">No dependency selected</div>
                 </div>
             </div>
 
