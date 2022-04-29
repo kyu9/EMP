@@ -30,15 +30,16 @@ dependencies {
 
 swaggerSources{
     EMP {
-        inputFile = file("$rootDir/emp.yaml")
+        inputFile = file("$rootDir/specs/emp.yaml")
         code {
             language = 'spring'
-            configFile = file("$rootDir/src/main/EMP-spec.json")
-            outputDir = file('$rootDir/emp')
+            configFile = file("$rootDir/specs/EMP-spec.json")
+            outputDir = file("$rootDir/specs/emp")
             components = ['models', 'apis', 'apiTests']
         }
     }
 }
+
 
 test {
     useJUnitPlatform()
