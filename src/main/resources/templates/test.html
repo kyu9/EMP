@@ -3,11 +3,11 @@
 <head>
     <title>Kona Initializr</title>
     <link th:href="@{/bootstrap/css/bootstrap.css}" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="resources/templates/main.css">
 </head>
 <body style="overflow-x: hidden; margin: 0px;">
 <!--가장 밖-->
 <div id="app" style="display: grid; place-items: center; width: 100%; height: 100%">
-    <!-- 여기서는 세로로 1:9? 정도로 나누고-->
     <div id="main" style="display: flex; flex-direction: column; width: 80%;">
         <header id="header" style="flex-grow: 1;">
             <h1 class="logo">
@@ -30,86 +30,67 @@
                             <div class="left" style="width: 50%; float: left; " >
                                 <div class="control">
                                     <label class="label" style="font-weight: bolder; font-size: 20px;">Project</label>
-                                    <div class="control-element" style="margin-top: 10px;">Gradle Project</div>
+                                    <div class="control-element" style="margin-top: 10px;">Gradle(4.10.2) Project</div>
                                 </div>
                             </div>
                             <div class="right" style="width: 50%; float: right">
                                 <div class="control">
-                                    <label class="label" style="font-weight: bolder">Language</label>
+                                    <label class="label" style="font-weight: bolder; font-size: 20px;">Language</label>
                                     <div class="control-element" style="margin-top: 10px;">
-                                        <div class="group-radio">
-                                            <a href="/" class="radio checked">
-                                                <span class="caret" tabindex="-1"></span>
-                                                <span class="radio-content" tabindex="-1">Java</span>
-                                            </a>
-                                            <a href="/" class="radio ">
-                                                <span class="caret" tabindex="-1"></span>
-                                                <span class="radio-content" tabindex="-1">Kotlin</span>
-                                            </a>
-                                            <a href="/" class="radio ">
-                                                <span class="caret" tabindex="-1"></span>
-                                                <span class="radio-content" tabindex="-1">Groovy</span>
-                                            </a>
+                                        <div class="group-radio" style="display: flex; flex-direction: row">
+                                            <div>
+                                                <input type="radio" id="langJava" value="langJava" name="language" checked>
+                                                <label for="langJava">Java</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="langKotlin" value="langKotlin" name="language">
+                                                <label for="langKotlin">Kotlin</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="control" style="border-bottom: solid; flex-grow: 2; margin-left: 10px; margin-right: 10px; margin-top: 10px; padding-bottom: 10px;">
-                            <label class="label" style="font-weight: bolder">Spring Boot</label>
+                            <label class="label" style="font-weight: bolder; font-size: 20px;">Spring Boot</label>
                             <div class="control-element" style="margin-top: 10px;">
-                                <div class="group-radio">
-                                    <a href="/" class="radio ">
-                                        <span class="caret" tabindex="-1"></span>
-                                        <span class="radio-content" tabindex="-1">2.1.8</span>
-                                    </a>
-                                </div>
+                                2.1.8
                             </div>
                         </div>
                         <div class="control" style="flex-grow: 6; margin-left: 10px; margin-right: 10px; margin-top: 10px;">
-                            <label class="label" style="font-weight: bolder">Project Metadata</label>
+                            <label class="label" style="font-weight: bolder; font-size: 20px;">Project Metadata</label>
                             <div class="control-element" style="margin-top: 20px;">
-                                <div class="control control-inline" style="margin-bottom: 10px; display: flex; flex-direction: row-reverse;">
-                                    <input type="text" id="input-group" class="input" value="com.example" style="float: right; width: 70%; margin-left: 10px;">
-                                    <label for="input-group" style="font-weight: bold; text-align: right">Group</label>
+                                <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
+                                    <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Group</label>
+                                    <input type="text" id="input-group" class="input" value="com.example" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
-                                <div class="control control-inline" style="margin-bottom: 10px; display: flex; flex-direction: row-reverse;">
-                                    <input type="text" id="input-artifact" class="input" value="demo" style="float: right; width: 70%; margin-left: 10px;">
-                                    <label for="input-artifact" style="font-weight: bold">Artifact</label>
+                                <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
+                                    <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Artifact</label>
+                                    <input type="text" id="input-artifact" class="input" value="demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
-                                <div class="control control-inline" style="margin-bottom: 10px; display: flex; flex-direction: row-reverse;">
-                                    <input type="text" id="input-name" class="input" value="demo" style="float: right; width: 70%; margin-left: 10px;">
-                                    <label for="input-name" style="font-weight: bold">Name</label>
+                                <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
+                                    <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Name</label>
+                                    <input type="text" id="input-name" class="input" value="demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
-                                <div class="control control-inline" style="margin-bottom: 10px; display: flex; flex-direction: row-reverse;">
-                                    <input type="text" id="input-description" class="input" value="Demo project for Spring Boot" style="float: right; width: 70%; margin-left: 10px;">
-                                    <label for="input-description" style="font-weight: bold">Description</label>
+                                <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
+                                    <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Description</label>
+                                    <input type="text" id="input-description" class="input" value="Demo project for Spring Boot" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
-                                <div class="control control-inline" style="margin-bottom: 10px; display: flex; flex-direction: row-reverse;">
-                                    <input type="text" id="input-packageName" class="input" value="com.example.demo" style="float: right; width: 70%; margin-left: 10px;">
-                                    <label for="input-packageName" style="font-weight: bold">Package</label>
+                                <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
+                                    <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Package</label>
+                                    <input type="text" id="input-package" class="input" value="com.example.demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
-                                <div class="control control-inline" style="margin-top: 20px; display: flex; flex-direction: row-reverse;">
-                                    <div class="group-radio" style="margin-left: 10px; float: right; width: 70%;">
-                                        <a href="/" class="radio checked">
-                                            <span class="caret" tabindex="-1"></span>
-                                            <span class="radio-content" tabindex="-1">Jar</span>
-                                        </a>
-                                        <a href="/" class="radio ">
-                                            <span class="caret" tabindex="-1"></span>
-                                            <span class="radio-content" tabindex="-1">War</span>
-                                        </a>
-                                    </div>
-                                    <label style="font-weight: bold;">Packaging</label>
+                                <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
+                                    <label style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Packaging</label>
+                                    <label class="group-radio" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
+                                        Jar
+                                    </label>
                                 </div>
-                                <div class="control control-inline" style="margin-top: 20px; display: flex; flex-direction: row-reverse;">
-                                    <div class="group-radio" style="margin-left: 10px; float: right; width: 70%;">
-                                        <a href="/" class="radio checked">
-                                            <span class="caret" tabindex="-1"></span>
-                                            <span class="radio-content" tabindex="-1">8</span>
-                                        </a>
-                                    </div>
-                                    <label style="font-weight: bold;">Java</label>
+                                <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
+                                    <label style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Java</label>
+                                    <label class="group-radio" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
+                                        8
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +100,7 @@
                 <div class="right" style="width: 49%; height: 100%; float: right; display: flex; flex-direction: column; border-left: solid">
                     <div class="control" style="flex-grow: 0.3; margin: 10px; display: table">
                         <div class="dependency-header" style="display: table-cell; vertical-align: middle">
-                            <span class="label" style="float: left; margin-top: 10px; font-weight: bolder">Dependencies</span>
+                            <span class="label" style="float: left; margin-top: 10px; font-weight: bolder; font-size: 20px;">Dependencies</span>
                             <button class="button" type="button" id="explore-dependencies" style="float:right; margin-top: 10px;">
                                 <span>Add</span>
                             </button>
