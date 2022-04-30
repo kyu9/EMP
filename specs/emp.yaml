@@ -1,57 +1,38 @@
-openapi: 3.0.3
+openapi: 3.0.0
 info:
-  title: Title
-  description: Title
-  version: 1.0.0
+  version: '1.0.0'
+  title: 'EMP Project'
+  description: 'Gradle Library CRUD'
 servers:
-  - url: 'https'
+  - url: http://localhost:8080
+
 paths:
-  /CLibrary:
+  /apiTest:
     get:
-      summary: Get Single Common Library
-      operationId: getCLibrary
+      summary: simple swagger test api
+      description: simple swagger test api
       responses:
         200:
-          description: 성공
+          description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetCLibraryDto'
+                type: string
+                example: responseTest
         400:
-          description: 실패
+          description: fail
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponseDto'
-    post:
-      summary: Save, Update Single Common Library
-      operationId: postCLibrary
-      responses:
-        200:
-          description: 성공
-        400:
-          description: 실패
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponseDto'
-
-
+                type: string
+                example: responseTest
 
 components:
   schemas:
-    GetCLibraryDto:
-      type: object
-      properties:
-        name:
-          type: string
-          example: actuator
     ErrorResponseDto:
       type: object
       properties:
-        errorCode:
+        code:
           type: string
-          example: "00_0000_00"
-        errorMessage:
+        message:
           type: string
-          example: "Error Invoke!"

@@ -2,7 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.1.8.RELEASE'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
-    id 'org.hidetake.swagger.generator' version '2.18.2'
+    id 'org.hidetake.swagger.generator' version '2.19.2'
 }
 
 group = 'com.example'
@@ -21,11 +21,13 @@ dependencies {
     }
     compile("org.springframework.boot:spring-boot-devtools")
     implementation('org.springframework.boot:spring-boot-starter-undertow')
-//    implementation 'org.openapitools:openapi-generator-cli:5.3.0'
-    implementation 'io.swagger:swagger-annotations:1.5.22'
-//    implementation 'gradle.plugin.org.hidetake:gradle-swagger-generator-plugin:2.18.1'
+//    implementation 'io.swagger:swagger-annotations:1.5.22'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    swaggerCodegen 'io.swagger:swagger-codegen-cli:2.4.27'             // Swagger Codegen V2
+    swaggerCodegen 'io.swagger.codegen.v3:swagger-codegen-cli:3.0.34'  // or Swagger Codegen V3
+    swaggerCodegen 'org.openapitools:openapi-generator-cli:3.3.4'
 }
 
 swaggerSources{
@@ -35,7 +37,7 @@ swaggerSources{
             language = 'spring'
             configFile = file("$rootDir/specs/EMP-spec.json")
             outputDir = file("$rootDir/specs/emp")
-            components = ['models', 'apis', 'apiTests']
+//            components = ['models', 'apis', 'apiTests']
         }
     }
 }
