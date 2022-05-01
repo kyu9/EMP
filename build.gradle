@@ -30,17 +30,17 @@ dependencies {
     swaggerCodegen 'org.openapitools:openapi-generator-cli:3.3.4'
 }
 
-swaggerSources{
-    EMP {
-        inputFile = file("$rootDir/specs/emp.yaml")
-        code {
-            language = 'spring'
-            configFile = file("$rootDir/specs/EMP-spec.json")
-            outputDir = file("$rootDir/specs/emp")
+//swaggerSources{
+//    EMP {
+//        inputFile = file("$rootDir/specs/emp.yaml")
+//        code {
+//            language = 'spring'
+//            configFile = file("$rootDir/specs/EMP-spec.json")
+//            outputDir = file("$rootDir/specs/emp")
 //            components = ['models', 'apis', 'apiTests']
-        }
-    }
-}
+//        }
+//    }
+//}
 
 
 test {

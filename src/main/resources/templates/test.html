@@ -21,8 +21,7 @@
 
         <hr class="divider">
 
-        <form class="form" autocomplete="off"
-              style="border: solid; flex-grow: 9; display: flex; flex-direction: column; height: 80%;">
+        <form class="form" autocomplete="off" style="border: solid; flex-grow: 9; display: flex; flex-direction: column; height: 80%;">
             <div class="colset colset-main" style="flex-grow: 9; border-bottom: solid; height: 70vh;">
                 <div class="left" style="width: 50%; height: 60%; float: left;">
                     <div class="col-sticky" style="width: 100%; height: 100%; display: flex; flex-direction: column">
@@ -30,14 +29,14 @@
                             <div class="left" style="width: 50%; float: left; " >
                                 <div class="control">
                                     <label class="label" style="font-weight: bolder; font-size: 20px;">Project</label>
-                                    <div class="control-element" style="margin-top: 10px;">Gradle(4.10.2) Project</div>
+                                    <div class="control-element" id="input-buildTool" style="margin-top: 10px;">Gradle(4.10.2) Project</div>
                                 </div>
                             </div>
                             <div class="right" style="width: 50%; float: right">
                                 <div class="control">
                                     <label class="label" style="font-weight: bolder; font-size: 20px;">Language</label>
                                     <div class="control-element" style="margin-top: 10px;">
-                                        <div class="group-radio" style="display: flex; flex-direction: row">
+                                        <div class="group-radio" id="input-language" style="display: flex; flex-direction: row">
                                             <div>
                                                 <input type="radio" id="langJava" value="langJava" name="language" checked>
                                                 <label for="langJava">Java</label>
@@ -53,9 +52,7 @@
                         </div>
                         <div class="control" style="border-bottom: solid; flex-grow: 2; margin-left: 10px; margin-right: 10px; margin-top: 10px; padding-bottom: 10px;">
                             <label class="label" style="font-weight: bolder; font-size: 20px;">Spring Boot</label>
-                            <div class="control-element" style="margin-top: 10px;">
-                                2.1.8
-                            </div>
+                            <div class="control-element" id="input-SBVersion" style="margin-top: 10px;">2.1.8</div>
                         </div>
                         <div class="control" style="flex-grow: 6; margin-left: 10px; margin-right: 10px; margin-top: 10px;">
                             <label class="label" style="font-weight: bolder; font-size: 20px;">Project Metadata</label>
@@ -82,21 +79,17 @@
                                 </div>
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Packaging</label>
-                                    <label class="group-radio" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
-                                        Jar
-                                    </label>
+                                    <label class="group-radio" id="input-packaging" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">Jar</label>
                                 </div>
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Java</label>
-                                    <label class="group-radio" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
-                                        8
-                                    </label>
+                                    <label class="group-radio" id="input-javaVersion" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">8</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- 마진 작업을 해주면 fancy한 선을 그을 수 있을 것 같은 예감이 든다 -->
+
                 <div class="right" style="width: 49%; height: 100%; float: right; display: flex; flex-direction: column; border-left: solid">
                     <div class="control" style="flex-grow: 0.3; margin: 10px; display: table">
                         <div class="dependency-header" style="display: table-cell; vertical-align: middle">
@@ -106,7 +99,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="dependencyList" style="flex-grow: 9.7; border-top: solid; margin: 15px; padding-top: 20px; font-style: oblique">No dependency selected</div>
+                    <div class="dependencyList" id="input-dependencyList" style="flex-grow: 9.7; border-top: solid; margin: 15px; padding-top: 20px; font-style: oblique">No dependency selected</div>
                 </div>
             </div>
 
