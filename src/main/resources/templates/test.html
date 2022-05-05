@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
 <head>
     <title>Kona Initializr</title>
     <link th:href="@{/bootstrap/css/bootstrap.css}" type="text/css" rel="stylesheet"/>
@@ -21,7 +21,8 @@
 
         <hr class="divider">
 
-        <form class="form" autocomplete="off" style="border: solid; flex-grow: 9; display: flex; flex-direction: column; height: 80%;">
+        <form class="form" autocomplete="off" role="form" action="#" th:action="@{/input}" method="post" th:object="${project}"
+              style="border: solid; flex-grow: 9; display: flex; flex-direction: column; height: 80%;">
             <div class="colset colset-main" style="flex-grow: 9; border-bottom: solid; height: 70vh;">
                 <div class="left" style="width: 50%; height: 60%; float: left;">
                     <div class="col-sticky" style="width: 100%; height: 100%; display: flex; flex-direction: column">
@@ -59,7 +60,7 @@
                             <div class="control-element" style="margin-top: 20px;">
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Group</label>
-                                    <input type="text" id="input-group" class="input" value="com.example" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
+                                    <input type="text" th:field="*{group}" id="input-group" class="input" value="com.example" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Artifact</label>
@@ -105,7 +106,7 @@
 
             <div class="actions" style="flex-grow: 1">
                 <div class="actions-container" style="text-align: center; margin: 20px;">
-                    <button class="button primary" type="button" id="generate-project">
+                    <button class="button primary" type="submit" id="generate-project">
                         <span class="button-content" tabindex="-1">
                             <span>GENERATE</span>
                         </span>
