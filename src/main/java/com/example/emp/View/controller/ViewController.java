@@ -32,7 +32,6 @@ public class ViewController {
     public ProjectDto inputThing(
         @RequestBody JsonObject jsonpObject
         ){
-
         System.out.println("===================================================================");
         System.out.println(jsonpObject);
         System.out.println("===================================================================");

@@ -2,12 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="ko">
 <head>
     <title>Kona Initializr</title>
-    <link th:href="@{/bootstrap/css/bootstrap.css}" type="text/css" rel="stylesheet"/>
-    <link rel="stylesheet" href="resources/templates/main.css">
-    <script th:inline="javascript" type="text/javascript" th:src="@{resources/static/js/main.js}"></script>
+<!--    <link th:href="@{/bootstrap/css/bootstrap.css}" type="text/css" rel="stylesheet"/>-->
+    <script th:inline="javascript" type="text/javascript" th:src="@{main.js}"></script>
+    <script th:src="@{/outSource/jquery-3.6.0.min.js}" rel="stylesheet"></script>
 </head>
 <body style="overflow-x: hidden; margin: 0px;">
-<!--가장 밖-->
 <div id="app" style="display: grid; place-items: center; width: 100%; height: 100%">
     <div id="main" style="display: flex; flex-direction: column; width: 80%;">
         <header id="header" style="flex-grow: 1;">
@@ -22,8 +21,7 @@
 
         <hr class="divider">
 
-        <div  autocomplete="off" role="form" action="#" method="post"
-              style="border: solid; flex-grow: 9; display: flex; flex-direction: column; height: 80%;">
+        <div style="border: solid; flex-grow: 9; display: flex; flex-direction: column; height: 80%;">
             <div class="colset colset-main" style="flex-grow: 9; border-bottom: solid; height: 70vh;">
                 <div class="left" style="width: 50%; height: 60%; float: left;">
                     <div class="col-sticky" style="width: 100%; height: 100%; display: flex; flex-direction: column">
@@ -118,8 +116,5 @@
     </div>
 </div>
 
-<script th:src="@{/bootstrap/js/jquery-3.6.0.min.js}"></script>
-<script th:src="@{/bootstrap/js/popper.js}"></script>
-<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
 </body>
 </html>
