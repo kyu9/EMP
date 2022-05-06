@@ -4,6 +4,7 @@
     <title>Kona Initializr</title>
     <link th:href="@{/bootstrap/css/bootstrap.css}" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="resources/templates/main.css">
+    <script th:inline="javascript" type="text/javascript" th:src="@{/js/main.js}"></script>
 </head>
 <body style="overflow-x: hidden; margin: 0px;">
 <!--가장 밖-->
@@ -21,7 +22,7 @@
 
         <hr class="divider">
 
-        <form class="form" autocomplete="off" role="form" action="#" th:action="@{/input}" method="post" th:object="${project}"
+        <div  autocomplete="off" role="form" action="#" method="post"
               style="border: solid; flex-grow: 9; display: flex; flex-direction: column; height: 80%;">
             <div class="colset colset-main" style="flex-grow: 9; border-bottom: solid; height: 70vh;">
                 <div class="left" style="width: 50%; height: 60%; float: left;">
@@ -60,23 +61,23 @@
                             <div class="control-element" style="margin-top: 20px;">
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Group</label>
-                                    <input type="text" th:field="*{group}" id="input-group" class="input" value="com.example" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
+                                    <input type="text" th:value="${data.group}" id="input-group" class="input" placeholder="com.example" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Artifact</label>
-                                    <input type="text" id="input-artifact" class="input" value="demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
+                                    <input type="text" th:value="${data.artifact}" id="input-artifact" class="input" placeholder="demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Name</label>
-                                    <input type="text" id="input-name" class="input" value="demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
+                                    <input type="text" th:value="${data.name}" id="input-name" class="input" placeholder="demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Description</label>
-                                    <input type="text" id="input-description" class="input" value="Demo project for Spring Boot" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
+                                    <input type="text" th:value="${data.description}" id="input-description" class="input" value="Demo project for Spring Boot" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Package</label>
-                                    <input type="text" id="input-package" class="input" value="com.example.demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
+                                    <input type="text" th:value="${data.fullPackage}" id="input-package" class="input" value="com.example.demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Packaging</label>
@@ -106,14 +107,14 @@
 
             <div class="actions" style="flex-grow: 1">
                 <div class="actions-container" style="text-align: center; margin: 20px;">
-                    <button class="button primary" type="submit" id="generate-project">
+                    <button class="button primary" id="generate-project" onclick="generate()">
                         <span class="button-content" tabindex="-1">
                             <span>GENERATE</span>
                         </span>
                     </button>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
