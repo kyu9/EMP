@@ -13,6 +13,5 @@ public class ProjectDto {
     String              language;
     String              springVersion;
     MetaData            metaData;
-    String              group;
     List<GradleModules> gradleModules;
 }

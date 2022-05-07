@@ -5,33 +5,44 @@ function generate(){
   console.log("this is buildType : " + buildType);
   projectDto.buildType = buildType;
 
-  let language = document.getElementById("input-language").innerText;
-  console.log("this is language : " + language);
-  projectDto.language = language;
+  let lang = document.querySelector('input[name="language"]:checked').value;
+  console.log("this is language : " + lang);
+  projectDto.language = lang;
 
-  let javaVersion = document.getElementById("input-javaVersion").textContent;
-  console.log("this is javaVersion : " + javaVersion);
-  projectDto.javaVersion = javaVersion;
+  let springVersion = document.getElementById("input-SBVersion").innerText;
+  console.log("this is springVersion : " + springVersion);
+  projectDto.springVersion = springVersion;
 
   let metaData = {};
-  let dataGroup = document.getElementById("input-group").innerText;
+  let dataGroup = document.getElementById("input-group").value;
   console.log("this is metaData.group : " + dataGroup);
   metaData.group = dataGroup;
 
-  let dataArtifact = document.getElementById("input-artifact").innerText;
+  let dataArtifact = document.getElementById("input-artifact").value;
   console.log("this is metaData.artifact : " + dataArtifact);
   metaData.artifact = dataArtifact;
 
-  let dataDescription = document.getElementById("input-description").innerText;
+  let dataName = document.getElementById("input-name").value;
+  console.log("this is metaData.name : " + dataName);
+  metaData.name = dataName;
+
+  let dataDescription = document.getElementById("input-description").value;
   console.log("this is metaData.description : " + dataDescription);
   metaData.description = dataDescription;
 
-  let dataFullPackage = document.getElementById("input-package").innerText;
+  let dataFullPackage = document.getElementById("input-package").value;
   console.log("this is metaData.fullPackage : " + dataFullPackage);
   metaData.fullPackage = dataFullPackage;
 
+  let dataPackaging = document.getElementById("input-packaging").innerText;
+  console.log("this is metaData.dataPackaging : " + dataPackaging);
+  metaData.packaging = dataPackaging;
+
+  let dataJavaVersion = document.getElementById("input-javaVersion").innerText;
+  console.log("this is metaData.javaVersion : " + dataJavaVersion);
+  metaData.javaVersion = dataJavaVersion;
+
   projectDto.metaData = metaData;
-  console.log(projectDto);
 
   $.ajax({
     url: "input",

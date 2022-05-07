@@ -1,10 +1,14 @@
 package com.example.emp.View.controller;
 
+import static org.apache.logging.log4j.message.MapMessage.MapFormat.JSON;
+
 import com.example.emp.View.model.MetaData;
 import com.example.emp.View.model.ProjectDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.google.gson.JsonObject;
+import java.io.IOException;
+import java.util.HashMap;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,11 +34,14 @@ public class ViewController {
     @PostMapping("/input")
     @ResponseBody
     public ProjectDto inputThing(
-        @RequestBody JsonObject jsonpObject
-        ){
+        @RequestBody String str
+        ) throws IOException {
         System.out.println("===================================================================");
-        System.out.println(jsonpObject);
+        System.out.println(str);
         System.out.println("===================================================================");
+
+        ProjectDto dto = objectMapper.readValue(str, ProjectDto.class);
+        System.out.println(dto.toString());
 
         return new ProjectDto();
     }

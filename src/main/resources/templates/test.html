@@ -28,8 +28,8 @@
                         <div class="colset" style="border-bottom: solid; flex-grow: 2; margin-left: 10px; margin-right: 10px; margin-top: 10px; padding-bottom: 10px;">
                             <div class="left" style="width: 50%; float: left; " >
                                 <div class="control">
-                                    <label class="label" style="font-weight: bolder; font-size: 20px;">Project</label>
-                                    <div class="control-element" id="input-buildTool" style="margin-top: 10px;">Gradle(4.10.2) Project</div>
+                                    <label class="label" style="font-weight: bolder; font-size: 20px;">Project(Gradle)</label>
+                                    <div class="control-element" id="input-buildTool" style="margin-top: 10px;">4.10.2</div>
                                 </div>
                             </div>
                             <div class="right" style="width: 50%; float: right">
@@ -38,11 +38,11 @@
                                     <div class="control-element" style="margin-top: 10px;">
                                         <div class="group-radio" id="input-language" style="display: flex; flex-direction: row">
                                             <div>
-                                                <input type="radio" id="langJava" value="langJava" name="language" checked>
+                                                <input type="radio" id="langJava" value="Java" name="language" checked>
                                                 <label for="langJava">Java</label>
                                             </div>
                                             <div>
-                                                <input type="radio" id="langKotlin" value="langKotlin" name="language">
+                                                <input type="radio" id="langKotlin" value="Kotlin" name="language">
                                                 <label for="langKotlin">Kotlin</label>
                                             </div>
                                         </div>
@@ -59,23 +59,23 @@
                             <div class="control-element" style="margin-top: 20px;">
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Group</label>
-                                    <input type="text" th:value="${data.group}" id="input-group" class="input" placeholder="com.example" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
+                                    <input type="text" id="input-group" class="input" value="com.example" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Artifact</label>
-                                    <input type="text" th:value="${data.artifact}" id="input-artifact" class="input" placeholder="demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
+                                    <input type="text" id="input-artifact" class="input" value="demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Name</label>
-                                    <input type="text" th:value="${data.name}" id="input-name" class="input" placeholder="demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
+                                    <input type="text" id="input-name" class="input" value="demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Description</label>
-                                    <input type="text" th:value="${data.description}" id="input-description" class="input" value="Demo project for Spring Boot" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
+                                    <input type="text" id="input-description" class="input" value="Demo project for Spring Boot" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label for="input-group" style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Package</label>
-                                    <input type="text" th:value="${data.fullPackage}" id="input-package" class="input" value="com.example.demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
+                                    <input type="text" id="input-package" class="input" value="com.example.demo" style="margin-left: 1.3rem; font-weight: 300; flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ">
                                 </div>
                                 <div class="control control-inline" style="display: flex; margin-bottom: 30px;">
                                     <label style="white-space: nowrap; font-weight: 500; flex-grow: 0; flex-shrink: 1; flex-basis: 110px; text-align: right">Packaging</label>
