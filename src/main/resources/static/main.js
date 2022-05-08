@@ -51,7 +51,12 @@ function generate(){
     headers: {'Content-Type': 'application/json'},
     dataType: "json",
     contentType: 'application/json',
-    success: alert("데이터 전송에 성공했습니다!!"),
-    fail: alert("데이터 전송에 실패했습니다 ㅠㅠㅠㅠㅠ")
+    success: function (){
+      alert("생성완료! 다운로드를 확인하세요")
+    },
+    fail: function (){
+      alert("데이터 전송에 실패했습니다 ㅠㅠㅠㅠㅠ")
+    }
   });
 }
+

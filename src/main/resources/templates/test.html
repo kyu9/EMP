@@ -117,4 +117,13 @@
 </div>
 
 </body>
+<script>
+    //full package name 라이브로 수정되는부분
+    $(document).ready(function(){
+        $('#input-group, #input-artifact, #input-name').keyup(function(){
+            var fullPackage = $('#input-group').val() + "." + $('#input-artifact').val();
+            $('#input-package').val(fullPackage);
+        })
+    })
+</script>
 </html>

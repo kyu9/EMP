@@ -36,12 +36,12 @@ public class ViewController {
     public ProjectDto inputThing(
         @RequestBody String str
         ) throws IOException {
-        System.out.println("===================================================================");
-        System.out.println(str);
-        System.out.println("===================================================================");
+        System.out.println("received json String : "+str);
 
         ProjectDto dto = objectMapper.readValue(str, ProjectDto.class);
-        System.out.println(dto.toString());
+        System.out.println("transformed Object : " + dto.toString());
+
+        //do Something
 
         return new ProjectDto();
     }
