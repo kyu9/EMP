@@ -60,3 +60,8 @@ function generate(){
   });
 }
 
+function showPopup(){
+  window.open('dependencies.html', 'dependencies', 'width=350, menubar=no, status=no, titlebar=no, toolbar=no')
+}
+
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>파라미터 입력 창</title>
+    <link th:href="@{/bootstrap/css/bootstrap.css}" type="text/css" rel="stylesheet"/>
+    <script th:inline="javascript" type="text/javascript" th:src="@{/js/add_options.js}"></script>
+</head>
+<body>
+<div class="container">
+    <div class="col-md-12 col-12 col-sm-12">
+        <div class="card" style=" margin-top:50px;">
+            <div class="card-header" style="text-align: center">
+                <span>
+                    <span class=badge-warning th:id="${testName}" th:text="${testName}+'\'s'"
+                          style="width: fit-content;"></span>
+                    <h4>Additional Option</h4>
+                </span>
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <form name="form1" th:action="@{/options}" th:object="${Test}" method="post" style="text-align: center">
+                        <div th:if="${Test==null}">
+                            <div th:each="f : ${Test.getFields()}">
+                                <div th:switch="${f}"  >
+                                    <span th:case="merchantId">가맹점 아이디(</span>
+                                    <span th:case="baseFee">배달 기본 비용(</span>
+                                    <span th:case="extraFee">배달 추가 비용(</span>
+                                    <span th:case="addr">배달 도착지 주소(</span>
+                                    <span th:case="latitude">배달 도착지 위도(</span>
+                                    <span th:case="longitude">배달 도착지 경도(</span>
+                                    <span class="keys" th:text="(${f})" style="margin: 0"></span>
+                                    <span>)</span>
+                                </div>
+                                <label>
+                                    <input class="values" type="text" autofocus>
+                                </label>
+                            </div>
+                        </div>
+                        <div th:if="${Test!=null}">
+                            <div th:each="f : ${Test.getFields()}">
+                                <div th:switch="${f}"  >
+                                    <span th:case="merchantId">가맹점 아이디(</span>
+                                    <span th:case="baseFee">배달 기본 비용(</span>
+                                    <span th:case="extraFee">배달 추가 비용(</span>
+                                    <span th:case="addr">배달 도착지 주소(</span>
+                                    <span th:case="latitude">배달 도착지 위도(</span>
+                                    <span th:case="longitude">배달 도착지 경도(</span>
+                                    <span class="keys" th:text="(${f})" style="margin: 0"></span>
+                                    <span>)</span>
+                                </div>
+                                <label>
+                                    <input class="values" type="text" th:value="${Test.get(f)}" autofocus>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center">
+                            <button type="button" class="btn btn-primary" th:onclick="javascript:sendOptions([[${testName}]])"
+                                    style="margin-top: 10px;">Save
+                            </button>
+                            <button type="button" class="btn btn-danger" th:onclick="self.close()"
+                                    style="margin-top: 10px;">Close
+                            </button>
+                            <input type="hidden" th:id="${testName}">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script th:src="@{/bootstrap/js/jquery-3.6.0.min.js}"></script>
+<script th:src="@{/bootstrap/js/popper.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+</body>
+</html>
