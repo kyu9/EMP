@@ -1,0 +1,12 @@
+.myDepen{
+  transition-duration: 0.2s;
+}
+
+.myDepen:hover {
+  background: yellow;
+}
+
+button#addBtn {
+  float: right;
+  margin-top: 10px;
+}

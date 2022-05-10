@@ -42,6 +42,10 @@ function generate(){
   console.log("this is metaData.javaVersion : " + dataJavaVersion);
   metaData.javaVersion = dataJavaVersion;
 
+  let dataList = document.getElementById("input-dependencyList").innerText;
+  console.log("this is DepList : " + dataList);
+  projectDto.gradleModules = dataList;
+
   projectDto.metaData = metaData;
 
   $.ajax({
@@ -60,8 +64,12 @@ function generate(){
   });
 }
 
-function showPopup(){
-  window.open('dependencies.html', 'dependencies', 'width=350, menubar=no, status=no, titlebar=no, toolbar=no')
+function chooseDep(id, desc){
+  let label = document.createElement("div")
+  label.innerText = id + " : " + desc
+
+
+
+  let parent = document.getElementById("input-dependencyList")
+  parent.appendChild(label);
 }
-
-

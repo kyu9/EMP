@@ -2,12 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="ko">
 <head>
     <title>Kona Initializr</title>
-<!--    <link th:href="@{/bootstrap/css/bootstrap.css}" type="text/css" rel="stylesheet"/>-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script th:inline="javascript" type="text/javascript" th:src="@{main.js}"></script>
-    <script th:src="@{/outSource/jquery-3.6.0.min.js}" rel="stylesheet"></script>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body style="overflow-x: hidden; margin: 0px;">
 <div id="app" style="display: grid; place-items: center; width: 100%; height: 100%">
@@ -37,10 +32,10 @@
                             </div>
                             <div class="right" style="width: 50%; float: right">
                                 <div class="control">
-                                    <label class="label" style="font-weight: bolder; font-size: 20px;">Language</label>
+                                    <label style="font-weight: bolder; font-size: 20px;">Language</label>
                                     <div class="control-element" style="margin-top: 10px;">
                                         <div class="group-radio" id="input-language" style="display: flex; flex-direction: row">
-                                            <div>
+                                            <div style="margin-right: 5px;">
                                                 <input type="radio" id="langJava" value="Java" name="language" checked>
                                                 <label for="langJava">Java</label>
                                             </div>
@@ -97,19 +92,23 @@
                     <div class="control" style="flex-grow: 0.3; margin: 10px; display: table">
                         <div class="dependency-header" style="display: table-cell; vertical-align: middle">
                             <span class="label" style="float: left; margin-top: 10px; font-weight: bolder; font-size: 20px;">Dependencies</span>
-                            <button id="addBtn" type="button" class="btn btn-primary" style="float:right; margin-top: 10px;" data-toggle="modal" data-target="#modalList">Add</button>
-                            <!-- Modal -->
+                            <button id="addBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalList">Add</button>
+
                             <div class="modal fade" id="modalList" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="modalTitle">LOOK!</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+                                            <h3 class="modal-title" id="modalTitle" style="text-align: center">Choose Dependency!</h3>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" hidden><span aria-hidden="true">&times;</span></button>
                                         </div>
                                         <div class="modal-body">
-                                            ...
+                                            <div th:each="item : ${dependencies}">
+                                                <div style="margin-bottom: 30px"></div>
+                                                <!-- TODO Change Format!-->
+                                                <button th:text="${item.id} + ' : ' + ${item.name} + ' : ' + ${item.description} + ' : ' + ${item.groupName} + ' : ' + ${item.script}" th:id="${item.name}" class="myDepen"
+                                                        th:onclick="chooseDep([[${item.id}]], [[${item.description}]])">content</button>
+                                                <div style="margin-top: 30px"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -140,6 +139,11 @@
 </div>
 
 </body>
+<!--    <link th:href="@{/bootstrap/css/bootstrap.css}" type="text/css" rel="stylesheet"/>-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script th:inline="javascript" type="text/javascript" th:src="@{main.js}"></script>
 <script>
     //full package name 라이브로 수정되는부분
     $(document).ready(function(){
